@@ -1,6 +1,6 @@
 #!/usr/bin/python
-import lutinModule as module
-import lutinTools as tools
+import lutin.module as module
+import lutin.tools as tools
 import datetime
 
 def get_desc():
@@ -18,7 +18,7 @@ def create(target):
 	
 	now = datetime.datetime.now()
 	
-	myModule.compile_flags_CC([
+	myModule.compile_flags('c++', [
 		'-Wno-write-strings',
 		'-Wall',
 		"-DBUILD_DAY=\""+str(now.day)+"\"",
