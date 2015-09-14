@@ -14,7 +14,12 @@ def create(target):
 	
 	
 	myModule.add_src_file([
-		'date/date.cpp'])
+		'date/date.cpp'
+		])
+	
+	myModule.add_header_file([
+		'date/date.h'
+		])
 	
 	now = datetime.datetime.now()
 	
@@ -28,7 +33,7 @@ def create(target):
 		"-DBUILD_MINUTE=\""+str(now.minute)+"\"",
 		"-DBUILD_SECOND=\""+str(now.second)+"\""])
 	
-	myModule.add_export_path(tools.get_current_path(__file__))
+	myModule.add_path(tools.get_current_path(__file__))
 	
 	# add the currrent module at the 
 	return myModule
