@@ -9,21 +9,21 @@ def get_desc():
 
 def create(target):
 	# module name is 'edn' and type binary.
-	myModule = module.Module(__file__, 'date', 'LIBRARY')
+	my_module = module.Module(__file__, 'date', 'LIBRARY')
 	# add the file to compile:
 	
 	
-	myModule.add_src_file([
+	my_module.add_src_file([
 		'date/date.cpp'
 		])
 	
-	myModule.add_header_file([
+	my_module.add_header_file([
 		'date/date.h'
 		])
 	
 	now = datetime.datetime.now()
 	
-	myModule.compile_flags('c++', [
+	my_module.compile_flags('c++', [
 		'-Wno-write-strings',
 		'-Wall',
 		"-DBUILD_DAY=\""+str(now.day)+"\"",
@@ -33,9 +33,9 @@ def create(target):
 		"-DBUILD_MINUTE=\""+str(now.minute)+"\"",
 		"-DBUILD_SECOND=\""+str(now.second)+"\""])
 	
-	myModule.add_path(tools.get_current_path(__file__))
+	my_module.add_path(tools.get_current_path(__file__))
 	
 	# add the currrent module at the 
-	return myModule
+	return my_module
 
 
