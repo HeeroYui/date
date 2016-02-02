@@ -5,9 +5,7 @@
  * 
  * @license BSD v3 (see license file)
  */
-
-#ifndef __DATE_H__
-#define __DATE_H__
+#pragma once
 
 #include <stdint.h>
 
@@ -20,5 +18,3 @@ namespace date {
 	int32_t getSecond();
 };
 
-
-#endif
