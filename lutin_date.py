@@ -33,7 +33,7 @@ def create(target, module_name):
 		'date/date.h'
 		])
 	now = datetime.datetime.now()
-	my_module.compile_flags('c++', [
+	my_module.add_flag('c++', [
 		'-Wno-write-strings',
 		'-Wall',
 		"-DBUILD_DAY=\""+str(now.day)+"\"",
