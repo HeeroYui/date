@@ -30,7 +30,7 @@ def create(target, module_name):
 		'date/date.cpp'
 		])
 	my_module.add_header_file([
-		'date/date.h'
+		'date/date.hpp'
 		])
 	now = datetime.datetime.now()
 	my_module.add_flag('c++', [

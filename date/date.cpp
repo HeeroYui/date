@@ -6,7 +6,7 @@
  * @license BSD v3 (see license file)
  */
 
-#include <date/date.h>
+#include <date/date.hpp>
 #ifndef BUILD_YEAR
 	#define BUILD_YEAR 1070
 #endif
