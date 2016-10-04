@@ -1,5 +1,5 @@
 #!/usr/bin/python
-import lutin.module as module
+import lutin.debug as debug
 import lutin.tools as tools
 import datetime
 
@@ -24,25 +24,24 @@ def get_maintainer():
 def get_version():
 	return "version.txt"
 
-def create(target, module_name):
-	my_module = module.Module(__file__, module_name, get_type())
+def configure(target, my_module):
 	my_module.add_src_file([
-		'date/date.cpp'
-		])
+	    'date/date.cpp'
+	    ])
 	my_module.add_header_file([
-		'date/date.hpp'
-		])
+	    'date/date.hpp'
+	    ])
 	now = datetime.datetime.now()
 	my_module.add_flag('c++', [
-		'-Wno-write-strings',
-		'-Wall',
-		"-DBUILD_DAY=\""+str(now.day)+"\"",
-		"-DBUILD_MONTH=\""+str(now.month)+"\"",
-		"-DBUILD_YEAR=\""+str(now.year)+"\"",
-		"-DBUILD_HOUR=\""+str(now.hour)+"\"",
-		"-DBUILD_MINUTE=\""+str(now.minute)+"\"",
-		"-DBUILD_SECOND=\""+str(now.second)+"\""])
-	my_module.add_path(tools.get_current_path(__file__))
-	return my_module
+	    '-Wno-write-strings',
+	    '-Wall',
+	    "-DBUILD_DAY=\""+str(now.day)+"\"",
+	    "-DBUILD_MONTH=\""+str(now.month)+"\"",
+	    "-DBUILD_YEAR=\""+str(now.year)+"\"",
+	    "-DBUILD_HOUR=\""+str(now.hour)+"\"",
+	    "-DBUILD_MINUTE=\""+str(now.minute)+"\"",
+	    "-DBUILD_SECOND=\""+str(now.second)+"\""
+	    ])
+	return True
 
 
