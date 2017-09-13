@@ -43,18 +43,18 @@ Use Date lib is really simple:
 
 Include library header
 ```{.cpp}
-#include <date/date.h>
+#include <date/date.hpp>
 ```
 Call the fucntion you need:
 ```{.cpp}
-std::cout << "Build year:" << date::getYear() << std::endl;
-std::cout << "Build month:" << date::getMonth() << std::endl;
-std::cout << "Build day:" << date::getDay() << std::endl;
-std::cout << "Build hour:" << date::getHour() << std::endl;
-std::cout << "Build minute:" << date::getMinute() << std::endl;
-std::cout << "Build second:" << date::getSecond() << std::endl;
+APPL_PRINT("Build year:" << date::getYear());
+APPL_PRINT("Build month:" << date::getMonth());
+APPL_PRINT("Build day:" << date::getDay());
+APPL_PRINT("Build hour:" << date::getHour());
+APPL_PRINT("Build minute:" << date::getMinute());
+APPL_PRINT("Build second:" << date::getSecond());
 // or :
-std::cout << "Build date:" << date::getDay() << "/" << date::getMonth() << "/" << date::getYear() << std::endl;
-std::cout << "Build time:" << date::getHour() << "h" << date::getMinute() << ":" << date::getSecond() << std::endl;
+APPL_PRINT("Build date:" << date::getDay() << "/" << date::getMonth() << "/" << date::getYear());
+APPL_PRINT("Build time:" << date::getHour() << "h" << date::getMinute() << ":" << date::getSecond());
 ```
 

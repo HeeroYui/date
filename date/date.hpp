@@ -6,8 +6,9 @@
  * @license BSD v3 (see license file)
  */
 #pragma once
-
-#include <cstdint>
+extern "C" {
+	#include <stdint.h>
+}
 
 /**
  * @brief date library namespace
